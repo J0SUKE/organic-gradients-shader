@@ -34,7 +34,7 @@ void main()
     
     vec2 squareUvs = coverUvs(vec2(1.),uViewportRes,vUv);
 
-    float mainNoise = snoise(vec3(squareUvs, uTime*0.1));
+    float mainNoise = snoise(vec3(squareUvs, uTime*0.15));
 
 
     float horizontalWaves = sin(mainNoise*10. + uTime);
