@@ -39,17 +39,11 @@ void main()
 
     float horizontalWaves = sin(mainNoise*10. + uTime);
 
-    // vec3 finalColor = vec3(
-    //     0.7+horizontalWaves*uRedFactor,
-    //     0.7+horizontalWaves*uGreenFactor,
-    //     0.7+horizontalWaves*uBlueFactor
-    // );
     vec3 finalColor = vec3(
         0.5+horizontalWaves*uRedFactor + exp(squareUvs.x),
-        0.7+horizontalWaves*uGreenFactor,
+        0.7+horizontalWaves*uGreenFactor ,
         0.9+horizontalWaves*uBlueFactor - exp(squareUvs.y)
     );
 
-    //gl_FragColor = vec4(vec3(horizontalWaves*0.1,horizontalWaves*0.2,horizontalWaves*0.4), 1.);
     gl_FragColor = vec4(finalColor, 1.);
 }
